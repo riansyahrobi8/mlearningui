@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mlearning/model/data_course.dart';
 import 'package:mlearning/utils/constanta_colors.dart';
 import 'package:mlearning/utils/size_config.dart';
 
-
 class TheoryScreen extends StatelessWidget {
+  final List<Theory> theoryList;
+
+  const TheoryScreen({Key key, this.theoryList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class TheoryScreen extends StatelessWidget {
               )
             ],
           ),
-          //membuat tampilan gambar pada background halaman 
+          //membuat tampilan gambar pada background halaman
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(24.0)),
@@ -32,7 +35,7 @@ class TheoryScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ...List.generate(
-                    20,
+                    theoryList.length,
                     (index) => Container(
                       width: double.infinity,
                       height: getProportionateScreenHeight(62.0),
@@ -48,7 +51,7 @@ class TheoryScreen extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            "Judul Materi.pdf",
+                            theoryList[index].title,
                             style: TextStyle(color: kText1, fontSize: 16.0),
                           ),
                         ),
