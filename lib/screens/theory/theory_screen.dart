@@ -2,10 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mlearning/utils/constanta_colors.dart';
 import 'package:mlearning/utils/size_config.dart';
+import 'package:http/http.dart' as http;
 
 
 class TheoryScreen extends StatelessWidget {
 
+  var url = 'http://localhost/rest_ci/index.php/Materi';
+  var response = await http.post(url, body: {'materi': 'doodle', 'color': 'blue'});
+
+   final String userAgent;
+   final http.Client _inner;
+
+   UserAgentClient(this.userAgent, this._inner);
+
+  Future<http.StreamedResponse> send(http.BaseRequest request) {
+      request.headers['user-agent'] = userAgent;
+      return _inner.send(request);
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
