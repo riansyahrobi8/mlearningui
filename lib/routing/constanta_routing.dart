@@ -3,7 +3,7 @@ const onBoarding = '/onBoarding';
 const login = "/login";
 const home = "/home";
 
-const theory = "/theory";
+const course = "/course";
 const video = "/video";
 const quiz = "/quiz";
 const qna = "/qna";

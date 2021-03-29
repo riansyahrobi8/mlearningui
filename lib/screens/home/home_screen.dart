@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   GestureDetector(
                     // klik teori
                     onTap: () {
-                      Navigator.pushNamed(context, theory);
+                      Navigator.pushNamed(context, course);
                     },
                     child: Container(
                       child: Stack(
@@ -118,56 +118,56 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: getProportionateScreenHeight(24.0),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, video);
-                    },
-                    child: Container(
-                      child: Stack(
-                        alignment: Alignment.centerLeft,
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: getProportionateScreenHeight(72.0),
-                            decoration: BoxDecoration(
-                                color: kBackgroundMenu,
-                                borderRadius: BorderRadius.circular(
-                                    getProportionateScreenWidth(100.0))),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal:
-                                      getProportionateScreenWidth(100.0),
-                                  vertical: getProportionateScreenHeight(16.0)),
-                              child: Align(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  "Video",
-                                  style: TextStyle(
-                                      color: kPrimary,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: getProportionateScreenWidth(144.0),
-                            height: getProportionateScreenWidth(144.0),
-                            decoration: BoxDecoration(
-                                color: kWhite,
-                                shape: BoxShape.circle,
-                                border: Border.all(color: kPrimary)),
-                            child: Padding(
-                              padding: EdgeInsets.all(
-                                  getProportionateScreenWidth(24.0)),
-                              child: SvgPicture.asset(
-                                  "assets/illustrations/video.svg"),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Navigator.pushNamed(context, video);
+                  //   },
+                  //   child: Container(
+                  //     child: Stack(
+                  //       alignment: Alignment.centerLeft,
+                  //       children: [
+                  //         Container(
+                  //           width: double.infinity,
+                  //           height: getProportionateScreenHeight(72.0),
+                  //           decoration: BoxDecoration(
+                  //               color: kBackgroundMenu,
+                  //               borderRadius: BorderRadius.circular(
+                  //                   getProportionateScreenWidth(100.0))),
+                  //           child: Padding(
+                  //             padding: EdgeInsets.symmetric(
+                  //                 horizontal:
+                  //                     getProportionateScreenWidth(100.0),
+                  //                 vertical: getProportionateScreenHeight(16.0)),
+                  //             child: Align(
+                  //               alignment: Alignment.centerRight,
+                  //               child: Text(
+                  //                 "Video",
+                  //                 style: TextStyle(
+                  //                     color: kPrimary,
+                  //                     fontSize: 16.0,
+                  //                     fontWeight: FontWeight.bold),
+                  //               ),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         Container(
+                  //           width: getProportionateScreenWidth(144.0),
+                  //           height: getProportionateScreenWidth(144.0),
+                  //           decoration: BoxDecoration(
+                  //               color: kWhite,
+                  //               shape: BoxShape.circle,
+                  //               border: Border.all(color: kPrimary)),
+                  //           child: Padding(
+                  //             padding: EdgeInsets.all(
+                  //                 getProportionateScreenWidth(24.0)),
+                  //             child: SvgPicture.asset(
+                  //                 "assets/illustrations/video.svg"),
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(
                     height: getProportionateScreenHeight(24.0),
                   ),
