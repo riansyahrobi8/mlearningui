@@ -5,23 +5,12 @@ import 'package:mlearning/utils/constanta_colors.dart';
 import 'package:mlearning/utils/size_config.dart';
 import 'package:http/http.dart' as http;
 
+
 class TheoryScreen extends StatelessWidget {
   final List<Theory> theoryList;
 
   const TheoryScreen({Key key, this.theoryList}) : super(key: key);
-
-  var url = 'http://localhost/rest_ci/index.php/Materi';
-  var response = await http.post(url, body: {'materi': 'doodle', 'color': 'blue'});
-
-   final String userAgent;
-   final http.Client _inner;
-
-   UserAgentClient(this.userAgent, this._inner);
-
-  Future<http.StreamedResponse> send(http.BaseRequest request) {
-      request.headers['user-agent'] = userAgent;
-      return _inner.send(request);
-    }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +29,7 @@ class TheoryScreen extends StatelessWidget {
               )
             ],
           ),
-          //membuat tampilan gambar pada background halaman
+          //membuat tampilan gambar pada background halaman 
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(24.0)),
