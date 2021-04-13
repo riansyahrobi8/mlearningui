@@ -1,4 +1,1 @@
-run using
-`flutter run --no-sound-null-safety`
-
-dfkbgklbdlkjbgs
+run using `flutter run -v` or press F5 on VSCode
