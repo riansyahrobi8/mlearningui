@@ -1,33 +1,45 @@
-class Course {
+class Question {
   final String title;
-  final List<Theory> theryList;
+  final bool isAnswer;
+  final String answer;
+  final DateTime dateTime;
 
-  Course({this.title, this.theryList});
+  Question({this.title, this.isAnswer, this.answer, this.dateTime});
 }
 
-class Theory {
-  final String title;
-
-  Theory({this.title});
-}
-
-List<Course> dataCourse = [
-  Course(title: "Bahasa Indonesia", theryList: [
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf")
-  ]),
-  Course(title: "Matematika", theryList: [
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf")
-  ]),
-  Course(title: "Pendidikan Agama", theryList: [
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf"),
-    Theory(title: "Materi1.pdf")
-  ]),
+List<Question> questionsList = [
+  Question(
+      title: "1 + 1 berapa ?",
+      isAnswer: false,
+      answer: "",
+      dateTime: DateTime.now()),
+  Question(
+      title: "Makan sambil khayang apa boleh pak ?",
+      isAnswer: true,
+      answer:
+          "Nak, kamu sekolah cuma sampe gerbang aja kah ? pertanyaan mu ngaco nak",
+      dateTime: DateTime.now()),
+  Question(
+      title: "Pak, Apakah memberi makan anjing itu haram ?",
+      isAnswer: true,
+      answer:
+          "Terima kasih telah bertanya. Maaf sebelumnya, coba tanya pak ustad dulu ya",
+      dateTime: DateTime.now()),
+  Question(
+      title: "1 + 1 berapa ?",
+      isAnswer: false,
+      answer: "",
+      dateTime: DateTime.now()),
+  Question(
+      title: "Makan sambil khayang apa boleh pak ?",
+      isAnswer: true,
+      answer:
+          "Nak, kamu sekolah cuma sampe gerbang aja kah ? pertanyaan mu ngaco nak",
+      dateTime: DateTime.now()),
+  Question(
+      title: "Pak, Apakah memberi makan anjing itu haram ?",
+      isAnswer: true,
+      answer:
+          "Terima kasih telah bertanya. Maaf sebelumnya, coba tanya pak ustad dulu ya",
+      dateTime: DateTime.now())
 ];

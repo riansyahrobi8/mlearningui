@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mlearning/utils/constanta_colors.dart';
+import 'package:mlearning/screens/qna/buiild_question_list.dart';
+import 'package:mlearning/screens/qna/build_empty_qna.dart';
 import 'package:mlearning/utils/size_config.dart';
 
-class QnaScreen extends StatelessWidget {
+class QnaScreen extends StatefulWidget {
+  @override
+  _QnaScreenState createState() => _QnaScreenState();
+}
+
+class _QnaScreenState extends State<QnaScreen> {
+  bool data = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("Tanya Jawab"),
       ),
@@ -21,76 +30,7 @@ class QnaScreen extends StatelessWidget {
               )
             ],
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(24.0)),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: getProportionateScreenHeight(36.0),
-                  ),
-                  Text(
-                    "Dari Bertanya Jadi Mengerti",
-                    style: TextStyle(
-                        color: kText1,
-                        fontSize: 32.0,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(16.0),
-                  ),
-                  Text(
-                    "Ajukan pertanyaanmu dan kamu akan mendapatkan jawabannya",
-                    style: TextStyle(color: kText2, fontSize: 16.0),
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(24.0),
-                  ),
-                  Form(
-                      child: TextFormField(
-                          keyboardType: TextInputType.text,
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal:
-                                      getProportionateScreenWidth(24.0)),
-                              filled: true,
-                              suffixIcon: Padding(
-                                padding: EdgeInsets.all(
-                                    getProportionateScreenWidth(4.0)),
-                                child: Container(
-                                    width: getProportionateScreenWidth(36.0),
-                                    height: getProportionateScreenHeight(36.0),
-                                    decoration: BoxDecoration(
-                                        color: kPrimary,
-                                        borderRadius: BorderRadius.circular(
-                                            getProportionateScreenWidth(
-                                                100.0))),
-                                    child: Center(
-                                      child: Icon(
-                                        Icons.search_rounded,
-                                        color: kWhite,
-                                      ),
-                                    )),
-                              ),
-                              hintText: "Masukan password Anda",
-                              hintStyle:
-                                  TextStyle(color: kText2, fontSize: 14.0),
-                              fillColor: kBackgroundCard,
-                              border: InputBorder.none,
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(100.0),
-                                  borderSide:
-                                      BorderSide(style: BorderStyle.none)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(100.0),
-                                  borderSide:
-                                      BorderSide(style: BorderStyle.none))))),
-                ],
-              ),
-            ),
-          )
+          data ? BuildQuestionsList() : BuildEmptyQnA()
         ],
       ),
     );
