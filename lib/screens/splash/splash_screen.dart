@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   final int splashDelay = 8;
 
   void navigationPage() {
-    Navigator.pushReplacementNamed(context, onBoarding);
+    Navigator.pushReplacementNamed(context, login);
   }
 
   Timer _loadWidget() {

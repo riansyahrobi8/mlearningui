@@ -21,10 +21,20 @@ class OnBoardingScreen extends StatelessWidget {
               SizedBox(
                 height: getProportionateScreenHeight(24.0),
               ),
-              Text(
-                "Selamat Datang",
-                style: TextStyle(color: kText1, fontSize: 16.0),
-              ),
+              RichText(
+                  text: TextSpan(
+                      text: "Selamat Datang ",
+                      style: TextStyle(
+                          color: kText1, fontFamily: "Poppins", fontSize: 16.0),
+                      children: [
+                    TextSpan(
+                        text: "Bagas",
+                        style: TextStyle(
+                            fontSize: 16.0,
+                            fontFamily: "Poppins",
+                            color: kPrimary,
+                            fontWeight: FontWeight.bold))
+                  ])),
               SizedBox(
                 height: getProportionateScreenHeight(36.0),
               ),
@@ -54,7 +64,7 @@ class OnBoardingScreen extends StatelessWidget {
                   constraints: BoxConstraints.tightFor(width: double.infinity),
                   child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, login);
+                        Navigator.pushReplacementNamed(context, home);
                       },
                       style: ButtonStyle(
                           padding: MaterialStateProperty.all(EdgeInsets.all(
