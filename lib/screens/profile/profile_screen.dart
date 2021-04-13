@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mlearning/routing/constanta_routing.dart';
 import 'package:mlearning/utils/constanta_colors.dart';
 import 'package:mlearning/utils/size_config.dart';
 
@@ -54,6 +55,37 @@ class ProfileScreen extends StatelessWidget {
                   "123456789",
                   style: TextStyle(color: kText1),
                 ),
+                Spacer(),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                      vertical: getProportionateScreenWidth(24.0)),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints.tightFor(width: double.infinity),
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, login, (route) => false);
+                        },
+                        style: ButtonStyle(
+                            padding: MaterialStateProperty.all(EdgeInsets.all(
+                                getProportionateScreenWidth(16.0))),
+                            elevation: MaterialStateProperty.all(0),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(100.0),
+                                        topRight: Radius.circular(8.0),
+                                        bottomRight: Radius.circular(100.0),
+                                        bottomLeft: Radius.circular(100.0)))),
+                            backgroundColor:
+                                MaterialStateProperty.all(kPrimary)),
+                        child: Text(
+                          "Keluar",
+                          style: TextStyle(color: kWhite, fontSize: 16.0),
+                        )),
+                  ),
+                )
               ],
             ),
           ),

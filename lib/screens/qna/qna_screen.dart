@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mlearning/screens/qna/buiild_question_list.dart';
+import 'package:mlearning/screens/qna/build_question_list.dart';
 import 'package:mlearning/screens/qna/build_empty_qna.dart';
 import 'package:mlearning/utils/size_config.dart';
 
