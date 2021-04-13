@@ -46,7 +46,7 @@ class CourseScreen extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            "Materi.pdf",
+                            "Materi ${(index + 1).toString()}.pdf",
                             style: TextStyle(color: kText1, fontSize: 16.0),
                           ),
                         ),

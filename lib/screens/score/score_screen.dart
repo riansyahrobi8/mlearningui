@@ -4,11 +4,15 @@ import 'package:mlearning/utils/constanta_colors.dart';
 import 'package:mlearning/utils/size_config.dart';
 
 class ScoreScreen extends StatelessWidget {
+  final int score;
+
+  const ScoreScreen({Key key, this.score}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Video"),
+        title: Text("Skor"),
       ),
       body: Stack(
         children: [
@@ -24,30 +28,31 @@ class ScoreScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: getProportionateScreenWidth(24.0)),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: getProportionateScreenHeight(24.0),
-                  ),
-                  Text(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: getProportionateScreenHeight(24.0),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
                     "Selamat\nNilai Anda",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: kText1, fontSize: 24.0),
                   ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(36.0),
-                  ),
-                  Text(
-                    "97",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: kPrimary,
-                        fontSize: 72.0,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: getProportionateScreenHeight(36.0),
+                ),
+                Text(
+                  score.toString(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: kPrimary,
+                      fontSize: 72.0,
+                      fontWeight: FontWeight.bold),
+                )
+              ],
             ),
           )
         ],
